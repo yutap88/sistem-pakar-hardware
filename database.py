@@ -243,7 +243,23 @@ def initialize_database():
              "Tampilan grafis pecah atau rusak saat menjalankan aplikasi berat."),
 
             ("G42", "Sebagian atau seluruh perangkat tidak menyala",
-             "Sebagian atau seluruh perangkat komputer tidak mendapat daya.")
+             "Sebagian atau seluruh perangkat komputer tidak mendapat daya."),
+
+            # ======================================
+            # GEJALA TAMBAHAN
+            # Sumber: JILKOMSITI Vol. 2 No. 1 (2023)
+            # Ningrum, M., & Al Qoyim. Sistem Pakar Deteksi Kerusakan
+            # Komputer Berdasarkan Gejala Hardware Komputer.
+            # ======================================
+
+            ("G43", "Bau gosong dari dalam casing",
+             "Terdapat bau gosong dari dalam casing komputer."),
+
+            ("G44", "Layar monitor berkedip-kedip",
+             "Layar monitor berkedip-kedip secara berulang."),
+
+            ("G45", "Penggunaan CPU selalu tinggi",
+             "Penggunaan CPU selalu tinggi meski tidak ada aplikasi berat yang terbuka.")
         ]
 
         cursor.executemany("""
@@ -449,7 +465,38 @@ def initialize_database():
             # P13 - Driver / Software
             ("G10", "P13", 0.80),
             ("G17", "P13", 0.70),
-            ("G32", "P13", 0.70)
+            ("G32", "P13", 0.70),
+
+            # ======================================
+            # ATURAN TAMBAHAN (tanpa menimpa aturan yang sudah ada)
+            # Sumber: JILKOMSITI Vol. 2 No. 1 (2023)
+            # Ningrum, M., & Al Qoyim. Sistem Pakar Deteksi Kerusakan
+            # Komputer Berdasarkan Gejala Hardware Komputer.
+            # Hanya pasangan gejala-kerusakan yang belum ada di sistem.
+            # ======================================
+
+            # P01 - Power Supply
+            ("G43", "P01", 0.90),
+            ("G22", "P01", 0.70),
+
+            # P02 - RAM
+            ("G23", "P02", 0.60),
+
+            # P03 - Hard Disk / SSD
+            ("G17", "P03", 0.60),
+
+            # P04 - VGA
+            ("G44", "P04", 0.60),
+
+            # P06 - Motherboard
+            ("G02", "P06", 0.70),
+            ("G04", "P06", 0.70),
+            ("G31", "P06", 0.80),
+
+            # P08 - Sistem Operasi
+            ("G08", "P08", 0.50),
+            ("G05", "P08", 0.60),
+            ("G45", "P08", 0.50)
         ]
 
         cursor.executemany("""
