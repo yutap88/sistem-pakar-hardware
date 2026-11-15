@@ -149,7 +149,101 @@ def initialize_database():
              "Komputer mengalami layar biru atau BSOD."),
 
             ("G13", "Kipas casing berputar tidak stabil",
-             "Kipas casing berputar tidak stabil atau kecepatannya berubah-ubah.")
+             "Kipas casing berputar tidak stabil atau kecepatannya berubah-ubah."),
+
+            # ======================================
+            # GEJALA TAMBAHAN
+            # Sumber: Data Dari sumber lain.xlsx (sheet Pengumpulan Data)
+            # Alfarizi, G. A., & Yunita, D. (2026). Implementasi pendekatan
+            # Certainty Factor untuk diagnosa kerusakan komputer berbasis web.
+            # ======================================
+
+            ("G14", "Lampu indikator monitor merah",
+             "Lampu indikator pada monitor menyala merah."),
+
+            ("G15", "Monitor menampilkan pesan No Signal",
+             "Monitor menampilkan pesan \"No Signal\" saat komputer dinyalakan."),
+
+            ("G16", "Layar monitor tampak redup",
+             "Cahaya layar monitor berkurang atau tampak redup."),
+
+            ("G17", "Aplikasi sering berhenti atau gagal",
+             "Aplikasi keluar sendiri atau gagal dijalankan."),
+
+            ("G18", "Sistem restart sebelum OS sempat dimuat",
+             "Komputer restart kembali sebelum sistem operasi selesai dimuat."),
+
+            ("G19", "Komputer tidak bisa dimatikan normal",
+             "Proses shutdown tidak berjalan normal dan komputer tetap hidup."),
+
+            ("G20", "Proses loading sistem operasi berhenti di tengah jalan",
+             "Proses loading sistem operasi berhenti sebelum selesai."),
+
+            ("G21", "Koneksi jaringan tidak stabil",
+             "Koneksi jaringan tidak stabil meskipun sinyal tersedia."),
+
+            ("G22", "Komputer sering mati mendadak",
+             "Komputer mati tanpa proses penutupan normal."),
+
+            ("G23", "Komputer sering freeze",
+             "Komputer membeku dan tidak merespons input untuk beberapa waktu."),
+
+            ("G24", "Area prosesor terasa sangat panas",
+             "Komputer terasa sangat panas di area prosesor."),
+
+            ("G25", "Keyboard tidak berfungsi",
+             "Tombol keyboard tidak merespons saat ditekan."),
+
+            ("G26", "Mouse tidak terdeteksi",
+             "Mouse tidak terdeteksi oleh sistem."),
+
+            ("G27", "Layar tidak menampilkan menu BIOS",
+             "Layar tidak menampilkan menu awal BIOS saat komputer dinyalakan."),
+
+            ("G28", "Muncul notifikasi kesalahan pada BIOS",
+             "Tampilan BIOS menampilkan pesan kesalahan."),
+
+            ("G29", "Perangkat keras tidak terdeteksi di BIOS",
+             "Perangkat keras tidak terdeteksi pada daftar perangkat di BIOS."),
+
+            ("G30", "Informasi perangkat pada BIOS tidak sesuai",
+             "Informasi perangkat yang terbaca BIOS tidak sesuai dengan kondisi sebenarnya."),
+
+            ("G31", "Waktu dan tanggal BIOS sering berubah",
+             "Pengaturan waktu dan tanggal BIOS berubah sendiri secara berulang."),
+
+            ("G32", "Perangkat eksternal sering putus-sambung",
+             "Perangkat eksternal terputus dan tersambung kembali secara berulang."),
+
+            ("G33", "Peringatan kekurangan memori",
+             "Sistem menampilkan peringatan kekurangan memori."),
+
+            ("G34", "Respon input lambat",
+             "Sistem lambat merespons input pengguna."),
+
+            ("G35", "Pemeriksaan disk selalu berjalan saat dinyalakan",
+             "Proses pemeriksaan disk berjalan setiap kali komputer dinyalakan."),
+
+            ("G36", "Kesalahan saat booting OS dari harddisk",
+             "Sistem menampilkan kesalahan saat memuat OS dari harddisk."),
+
+            ("G37", "Booting sangat lama",
+             "Proses booting memakan waktu sangat lama."),
+
+            ("G38", "File sering rusak",
+             "Berkas pada sistem sering korup atau tidak dapat dibuka."),
+
+            ("G39", "Pesan kesalahan aplikasi berbasis grafis",
+             "Aplikasi berbasis grafis menampilkan pesan kesalahan."),
+
+            ("G40", "Performa grafis tidak optimal",
+             "Tampilan grafis berjalan tidak optimal atau tersendat."),
+
+            ("G41", "Tampilan grafis pecah saat aplikasi berat",
+             "Tampilan grafis pecah atau rusak saat menjalankan aplikasi berat."),
+
+            ("G42", "Sebagian atau seluruh perangkat tidak menyala",
+             "Sebagian atau seluruh perangkat komputer tidak mendapat daya.")
         ]
 
         cursor.executemany("""
@@ -192,7 +286,48 @@ def initialize_database():
             ("P06", "Motherboard Bermasalah",
              "Gangguan pada papan utama komputer.",
              "Periksa konektor, port, dan kondisi fisik motherboard. "
-             "Lakukan pemeriksaan lebih lanjut oleh teknisi.")
+             "Lakukan pemeriksaan lebih lanjut oleh teknisi."),
+
+            # ======================================
+            # KERUSAKAN TAMBAHAN
+            # Sumber: Data Dari sumber lain.xlsx (sheet Pengumpulan Data)
+            # Alfarizi, G. A., & Yunita, D. (2026)
+            # ======================================
+
+            ("P07", "Monitor Bermasalah",
+             "Gangguan pada tampilan atau perangkat monitor.",
+             "Periksa kabel dan sumber sinyal monitor, uji monitor pada "
+             "perangkat lain, dan ganti kabel atau panel bila rusak."),
+
+            ("P08", "Sistem Operasi Bermasalah",
+             "Gangguan pada sistem operasi komputer.",
+             "Periksa file sistem, perbarui atau pasang ulang sistem operasi, "
+             "dan cadangkan data sebelum melakukan perbaikan."),
+
+            ("P09", "Prosesor Bermasalah",
+             "Gangguan pada prosesor komputer.",
+             "Pantau suhu prosesor, bersihkan sistem pendingin, ganti thermal "
+             "paste, dan bawa ke teknisi bila prosesor rusak."),
+
+            ("P10", "Keyboard Bermasalah",
+             "Gangguan pada perangkat keyboard.",
+             "Periksa koneksi keyboard, uji pada perangkat lain, bersihkan "
+             "konektor, dan ganti keyboard bila tidak berfungsi."),
+
+            ("P11", "Mouse Bermasalah",
+             "Gangguan pada perangkat mouse.",
+             "Periksa koneksi port atau Bluetooth, ganti baterai bila perlu, "
+             "dan uji mouse pada perangkat lain."),
+
+            ("P12", "BIOS atau CMOS Bermasalah",
+             "Gangguan pada pengaturan BIOS atau baterai CMOS.",
+             "Reset BIOS ke setelan pabrik, ganti baterai CMOS, dan perbarui "
+             "firmware BIOS bila tersedia."),
+
+            ("P13", "Driver atau Software Bermasalah",
+             "Gangguan pada driver perangkat atau software sistem.",
+             "Perbarui atau pasang ulang driver perangkat dan periksa "
+             "Device Manager untuk konflik perangkat.")
         ]
 
         cursor.executemany("""
@@ -241,7 +376,80 @@ def initialize_database():
             ("G01", "P06", 0.70),
             ("G03", "P06", 0.60),
             ("G08", "P06", 0.55),
-            ("G10", "P06", 0.70)
+            ("G10", "P06", 0.70),
+
+            # ======================================
+            # ATURAN TAMBAHAN (tanpa menimpa aturan yang sudah ada)
+            # Sumber: Data Dari sumber lain.xlsx (sheet Pengumpulan Data)
+            # Alfarizi, G. A., & Yunita, D. (2026)
+            # ======================================
+
+            # P01 - Power Supply
+            ("G42", "P01", 0.90),
+
+            # P02 - RAM
+            ("G05", "P02", 0.60),
+            ("G33", "P02", 0.80),
+            ("G34", "P02", 0.60),
+
+            # P03 - Hard Disk / SSD
+            ("G20", "P03", 0.80),
+            ("G35", "P03", 0.80),
+            ("G36", "P03", 0.80),
+            ("G37", "P03", 0.70),
+            ("G38", "P03", 0.80),
+
+            # P04 - VGA
+            ("G39", "P04", 0.70),
+            ("G40", "P04", 0.70),
+            ("G41", "P04", 0.80),
+
+            # P05 - Sistem Pendingin
+            ("G22", "P05", 0.80),
+
+            # P06 - Motherboard
+            ("G27", "P06", 0.70),
+
+            # P07 - Monitor
+            ("G04", "P07", 0.80),
+            ("G09", "P07", 0.60),
+            ("G14", "P07", 0.80),
+            ("G15", "P07", 0.80),
+            ("G16", "P07", 0.70),
+
+            # P08 - Sistem Operasi
+            ("G12", "P08", 0.90),
+            ("G17", "P08", 0.60),
+            ("G18", "P08", 0.70),
+            ("G19", "P08", 0.60),
+            ("G20", "P08", 0.70),
+            ("G21", "P08", 0.50),
+
+            # P09 - Prosesor
+            ("G07", "P09", 0.80),
+            ("G12", "P09", 0.90),
+            ("G22", "P09", 0.80),
+            ("G23", "P09", 0.70),
+            ("G24", "P09", 0.80),
+
+            # P10 - Keyboard
+            ("G25", "P10", 0.90),
+
+            # P11 - Mouse
+            ("G26", "P11", 0.90),
+
+            # P12 - BIOS / CMOS
+            ("G03", "P12", 0.80),
+            ("G27", "P12", 0.90),
+            ("G28", "P12", 0.90),
+            ("G29", "P12", 0.90),
+            ("G30", "P12", 0.80),
+            ("G31", "P12", 0.90),
+
+            # P13 - Driver / Software
+            ("G10", "P13", 0.80),
+            ("G17", "P13", 0.70),
+            ("G32", "P13", 0.70)
         ]
 
         cursor.executemany("""
